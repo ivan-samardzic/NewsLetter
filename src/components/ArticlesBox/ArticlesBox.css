@@ -1,0 +1,19 @@
+.articles-box {
+    margin: 40px auto;
+    width: 1250px;
+    display: flex;
+    flex-direction: row;
+    margin: 0px auto;
+}
+
+.headlines-box {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+.side-box {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
