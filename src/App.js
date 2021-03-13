@@ -16,11 +16,11 @@ const App = () => {
 
   useEffect(() => {
         setLoading(true);
-        const searchSideArticles = async () => {
-            const responseSide = await axios.get('https://newsapi.org/v2/top-headlines?country=ca&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=8');
+        const searchArticles = async () => {
+            const responseSide = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=8');
             const responseSideJSON = await responseSide.data;
 
-            const responseHead = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=4');
+            const responseHead = await axios.get('https://newsapi.org/v2/top-headlines?country=ca&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=4');
             const responseHeadJSON = await responseHead.data;
             if(responseSideJSON && responseHeadJSON) {
                 console.log(loading)
@@ -30,7 +30,7 @@ const App = () => {
             }
         };
 
-        searchSideArticles();
+        searchArticles();
         console.log(sideArticles)
         console.log(loading)
   }, [])
