@@ -47,14 +47,14 @@
 
 .side-box .side-poster {
     position: relative;
-    width: 420px;
+    width: 430px;
     height: 231px;
 }
 
 .side-box .side-details {
     position: absolute;
     bottom: 0%;
-    width: 420px;
+    width: 430px;
     background-color: rgba(20, 20, 20, 0.75);
     padding: 15px;
 }
