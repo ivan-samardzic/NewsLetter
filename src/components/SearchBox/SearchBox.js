@@ -32,7 +32,7 @@ const SearchBox = () => {
     }, [query])
 
     return (
-        <form className="form" onSubmit={(event) => handleSubmit(event)}>
+        <form className="form" onSubmit={(event) => handleSubmit(event)} >
             <input type="text" className="form-control"
             placeholder="Search..." 
             value={query} onChange={(event) => setQuery(event.target.value)}
