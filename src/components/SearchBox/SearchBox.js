@@ -1,17 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { withRouter } from 'react-router-dom'
 import './SearchBox.css'
 import axios from 'axios'
 
-const SearchBox = () => {
+const SearchBox = ({history}) => {
     const [query, setQuery] = useState('')
     const [filterArticles, setFilterArticles] = useState({})
     const [loading, setLoading] = useState(true)
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault(); 
 
         console.log(filterArticles)
+        history.push(`/${query}`, {
+            filterArticles
+        });
         setQuery('');
     }
 
@@ -43,4 +47,4 @@ const SearchBox = () => {
 )
 }
 
-export default SearchBox
+export default withRouter(SearchBox);
