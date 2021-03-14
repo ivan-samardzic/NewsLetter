@@ -1,0 +1,7 @@
+.filters-box {
+    margin: 40px auto;
+    width: 1250px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
