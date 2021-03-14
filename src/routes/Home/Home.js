@@ -26,6 +26,7 @@ const Home = () => {
             const responseHeadJSON = await responseHead.data;
   
             if(responseSideJSON && responseHeadJSON) {
+                console.log(loading)
                 setHeadlineArticles(responseHeadJSON)
                 setSideArticles(responseSideJSON)
                 setLoading(false)
@@ -33,6 +34,9 @@ const Home = () => {
           };
   
           searchArticles(count);
+          console.log(sideArticles)
+          console.log(loading)
+          console.log(count)
     }, [count])
   
     return (
