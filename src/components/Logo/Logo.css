@@ -8,12 +8,13 @@
 }
 
 .logo-box i {
-    color: rgb(40, 40, 200);
+    color: rgb(140, 140, 240);
+    font-weight: 600;
 }
 
 .logo-box span {
     font-weight: 100;
-    color: rgb(40, 40, 200);
+    color: rgb(140, 140, 240);
     transition: all 0.1s ease;
 }
 
