@@ -7,31 +7,8 @@ import ArticlesBox from '../../components/ArticlesBox/ArticlesBox';
 import Spinner from '../../components/Spinner/Spinner'
 import Button from '../../components/Button/Button'
 import Footer from '../../components/Footer/Footer'
-import axios from 'axios';
 
 const Sports = () => {
-    const [headlineSportsArticles, setHeadlineSportsArticles] = useState({})
-    const [sideSportsArticles, setSideSportsArticles] = useState({})
-    const [loading, setLoading] = useState(true)
-    const [count, setCount] = useState(1)
-
-    useEffect(() => {
-        setLoading(true);
-        const searchSportsArticles = async (count) => {
-          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=sports&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
-          const responseSideJSON = await responseSide.data;
-
-          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*2}`);
-          const responseHeadJSON = await responseHead.data;
-
-          if(responseSideJSON && responseHeadJSON) {
-            setHeadlineSportsArticles(responseHeadJSON)
-            setSideSportsArticles(responseSideJSON)
-            setLoading(false)
-          }
-        };
-        searchSportsArticles(count);
-  }, [count])
 
     return (
         <div className='container-fluid'>
