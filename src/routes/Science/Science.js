@@ -10,14 +10,14 @@ import Footer from '../../components/Footer/Footer'
 import axios from 'axios';
 
 const Science = () => {
-    const [headlineArticles, setHeadlineArticles] = useState({})
-    const [sideArticles, setSideArticles] = useState({})
+    const [headlineScienceArticles, setHeadlineScienceArticles] = useState({})
+    const [sideScienceArticles, setSideScienceArticles] = useState({})
     const [loading, setLoading] = useState(true)
     const [count, setCount] = useState(1)
 
     useEffect(() => {
         setLoading(true);
-        const searchArticles = async (count) => {
+        const searchScienceArticles = async (count) => {
           const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=science&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
           const responseSideJSON = await responseSide.data;
 
@@ -25,12 +25,12 @@ const Science = () => {
           const responseHeadJSON = await responseHead.data;
 
           if(responseSideJSON && responseHeadJSON) {
-              setHeadlineArticles(responseHeadJSON)
-              setSideArticles(responseSideJSON)
-              setLoading(false)
+            setHeadlineScienceArticles(responseHeadJSON)
+            setSideScienceArticles(responseSideJSON)
+            setLoading(false)
           }
         };
-        searchArticles(count);
+        searchScienceArticles(count);
   }, [count])
 
     return (
@@ -38,7 +38,7 @@ const Science = () => {
             <Header size='36px' />
             <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
             <RouteName name='Science' />
-            {loading ? <Spinner /> : <ArticlesBox headlineArticles={headlineArticles} sideArticles={sideArticles} />}
+            {loading ? <Spinner /> : <ArticlesBox headlineArticles={headlineScienceArticles} sideArticles={sideScienceArticles} />}
             <Button count={count} setCount={setCount} />
             <Footer size='48px' />
         </div>

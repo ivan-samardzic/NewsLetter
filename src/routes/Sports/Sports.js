@@ -10,14 +10,14 @@ import Footer from '../../components/Footer/Footer'
 import axios from 'axios';
 
 const Sports = () => {
-    const [headlineArticles, setHeadlineArticles] = useState({})
-    const [sideArticles, setSideArticles] = useState({})
+    const [headlineSportsArticles, setHeadlineSportsArticles] = useState({})
+    const [sideSportsArticles, setSideSportsArticles] = useState({})
     const [loading, setLoading] = useState(true)
     const [count, setCount] = useState(1)
 
     useEffect(() => {
         setLoading(true);
-        const searchArticles = async (count) => {
+        const searchSportsArticles = async (count) => {
           const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=sports&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
           const responseSideJSON = await responseSide.data;
 
@@ -25,12 +25,12 @@ const Sports = () => {
           const responseHeadJSON = await responseHead.data;
 
           if(responseSideJSON && responseHeadJSON) {
-              setHeadlineArticles(responseHeadJSON)
-              setSideArticles(responseSideJSON)
-              setLoading(false)
+            setHeadlineSportsArticles(responseHeadJSON)
+            setSideSportsArticles(responseSideJSON)
+            setLoading(false)
           }
         };
-        searchArticles(count);
+        searchSportsArticles(count);
   }, [count])
 
     return (
@@ -38,7 +38,7 @@ const Sports = () => {
             <Header size='36px' />
             <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
             <RouteName name='Sports' />
-            {loading ? <Spinner /> : <ArticlesBox headlineArticles={headlineArticles} sideArticles={sideArticles} />}
+            {loading ? <Spinner /> : <ArticlesBox headlineArticles={headlineSportsArticles} sideArticles={sideSportsArticles} />}
             <Button count={count} setCount={setCount} />
             <Footer size='48px' />
         </div>

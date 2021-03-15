@@ -11,14 +11,14 @@ import axios from 'axios';
 
 const Home = () => {
 
-    const [headlineArticles, setHeadlineArticles] = useState({})
-    const [sideArticles, setSideArticles] = useState({})
+    const [headlineHomeArticles, setHeadlineHomeArticles] = useState({})
+    const [sideHomeArticles, setSideHomeArticles] = useState({})
     const [loading, setLoading] = useState(true)
     const [count, setCount] = useState(1)
   
     useEffect(() => {
           setLoading(true);
-          const searchArticles = async (count) => {
+          const searchHomeArticles = async (count) => {
             const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=general&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
             const responseSideJSON = await responseSide.data;
   
@@ -27,13 +27,13 @@ const Home = () => {
   
             if(responseSideJSON && responseHeadJSON) {
                 console.log(loading)
-                setHeadlineArticles(responseHeadJSON)
-                setSideArticles(responseSideJSON)
+                setHeadlineHomeArticles(responseHeadJSON)
+                setSideHomeArticles(responseSideJSON)
                 setLoading(false)
             }
           };
   
-          searchArticles(count);
+          searchHomeArticles(count);
           console.log(sideArticles)
           console.log(loading)
           console.log(count)
@@ -44,7 +44,7 @@ const Home = () => {
             <Header size='36px' />
             <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
             <RouteName name='Home' />
-            {loading ? <Spinner /> : <ArticlesBox headlineArticles={headlineArticles} sideArticles={sideArticles} />}
+            {loading ? <Spinner /> : <ArticlesBox headlineArticles={headlineHomeArticles} sideArticles={sideHomeArticles} />}
             <Button count={count} setCount={setCount} />
             <Footer size='48px' />
         </div>

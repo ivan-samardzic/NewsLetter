@@ -10,14 +10,14 @@ import Footer from '../../components/Footer/Footer'
 import axios from 'axios';
 
 const Media = () => {
-    const [headlineArticles, setHeadlineArticles] = useState({})
-    const [sideArticles, setSideArticles] = useState({})
+    const [headlineMediaArticles, setHeadlineMediaArticles] = useState({})
+    const [sideMediaArticles, setSideMediaArticles] = useState({})
     const [loading, setLoading] = useState(true)
     const [count, setCount] = useState(1)
 
     useEffect(() => {
         setLoading(true);
-        const searchArticles = async (count) => {
+        const searchMediaArticles = async (count) => {
           const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=entertainment&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
           const responseSideJSON = await responseSide.data;
 
@@ -25,13 +25,13 @@ const Media = () => {
           const responseHeadJSON = await responseHead.data;
 
           if(responseSideJSON && responseHeadJSON) {
-              setHeadlineArticles(responseHeadJSON)
-              setSideArticles(responseSideJSON)
-              setLoading(false)
+            setHeadlineMediaArticles(responseHeadJSON)
+            setSideMediaArticles(responseSideJSON)
+            setLoading(false)
           }
         };
 
-        searchArticles(count);
+        searchMediaArticles(count);
   }, [count])
 
     return (
@@ -39,7 +39,7 @@ const Media = () => {
             <Header size='36px' />
             <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
             <RouteName name='Media' />
-            {loading ? <Spinner /> : <ArticlesBox headlineArticles={headlineArticles} sideArticles={sideArticles} />}
+            {loading ? <Spinner /> : <ArticlesBox headlineArticles={headlineMediaArticles} sideArticles={sideMediaArticles} />}
             <Button count={count} setCount={setCount} />
             <Footer size='48px' />
         </div>
