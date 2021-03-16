@@ -26,6 +26,7 @@ Requirements List:
 3. The app must have a search filter on the home page or category page
 4. The app should have a button that must be clickable and by clicking it number of rendered articles from each category should be
 doubled
+5. By clicking on each article, app must lead the user to the article url provided by News API
 
 ### Deployment
 
