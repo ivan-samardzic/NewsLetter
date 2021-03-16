@@ -19,16 +19,22 @@ const NewsState = props => {
     const [headlineTechArticles, setHeadlineTechArticles] = useState({})
     const [sideTechArticles, setSideTechArticles] = useState({})
     const [loading, setLoading] = useState(true)
-    const [count, setCount] = useState(1)
+    const [homeCount, setHomeCount] = useState(1)
+    const [businessCount, setBusinessCount] = useState(1)
+    const [healthCount, setHealthCount] = useState(1)
+    const [mediaCount, setMediaCount] = useState(1)
+    const [scienceCount, setScienceCount] = useState(1)
+    const [sportsCount, setSportsCount] = useState(1)
+    const [techCount, setTechCount] = useState(1)
 
 
     useEffect(() => {
         setLoading(true);
-        const searchHomeArticles = async (count) => {
-          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=general&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
+        const searchHomeArticles = async (homeCount) => {
+          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=general&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${homeCount*8}`);
           const responseSideJSON = await responseSide.data;
 
-          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*2}`);
+          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${homeCount*4}`);
           const responseHeadJSON = await responseHead.data;
 
           if(responseSideJSON && responseHeadJSON) {
@@ -38,17 +44,17 @@ const NewsState = props => {
           }
         };
 
-        searchHomeArticles(count);
-    }, [count])
+        searchHomeArticles(homeCount);
+    }, [homeCount])
 
 
     useEffect(() => {
         setLoading(true);
-        const searchBusinessArticles = async (count) => {
-          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=business&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
+        const searchBusinessArticles = async (businessCount) => {
+          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=business&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${businessCount*8}`);
           const responseSideBusinessJSON = await responseSide.data;
 
-          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*2}`);
+          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${businessCount*4}`);
           const responseHeadBusinessJSON = await responseHead.data;
 
           if(responseSideBusinessJSON && responseHeadBusinessJSON) {
@@ -58,16 +64,16 @@ const NewsState = props => {
           }
         };
 
-        searchBusinessArticles(count);
-    }, [count])
+        searchBusinessArticles(businessCount);
+    }, [businessCount])
 
     useEffect(() => {
         setLoading(true);
-        const searchHealthArticles = async (count) => {
-          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=health&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
+        const searchHealthArticles = async (healthCount) => {
+          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=health&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${healthCount*8}`);
           const responseSideHealthJSON = await responseSide.data;
 
-          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=health&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*2}`);
+          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=health&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${healthCount*4}`);
           const responseHeadHealthJSON = await responseHead.data;
 
           if(responseSideHealthJSON && responseHeadHealthJSON) {
@@ -76,16 +82,16 @@ const NewsState = props => {
               setLoading(false)
           }
         };
-        searchHealthArticles(count);
-    }, [count])
+        searchHealthArticles(healthCount);
+    }, [healthCount])
 
     useEffect(() => {
         setLoading(true);
-        const searchScienceArticles = async (count) => {
-          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=science&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
+        const searchScienceArticles = async (scienceCount) => {
+          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=science&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${scienceCount*8}`);
           const responseSideScienceJSON = await responseSide.data;
 
-          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*2}`);
+          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${scienceCount*4}`);
           const responseHeadScienceJSON = await responseHead.data;
 
           if(responseSideScienceJSON && responseHeadScienceJSON) {
@@ -94,16 +100,16 @@ const NewsState = props => {
             setLoading(false)
           }
         };
-        searchScienceArticles(count);
-    }, [count])
+        searchScienceArticles(scienceCount);
+    }, [scienceCount])
 
     useEffect(() => {
         setLoading(true);
-        const searchMediaArticles = async (count) => {
-          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=entertainment&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
+        const searchMediaArticles = async (mediaCount) => {
+          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=entertainment&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${mediaCount*8}`);
           const responseSideMediaJSON = await responseSide.data;
 
-          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*2}`);
+          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${mediaCount*4}`);
           const responseHeadMediaJSON = await responseHead.data;
 
           if(responseSideMediaJSON && responseHeadMediaJSON) {
@@ -113,16 +119,16 @@ const NewsState = props => {
           }
         };
 
-        searchMediaArticles(count);
-    }, [count])
+        searchMediaArticles(mediaCount);
+    }, [mediaCount])
 
     useEffect(() => {
         setLoading(true);
-        const searchSportsArticles = async (count) => {
-          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=sports&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
+        const searchSportsArticles = async (sportsCount) => {
+          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=sports&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${sportsCount*8}`);
           const responseSideSportsJSON = await responseSide.data;
 
-          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*2}`);
+          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${sportsCount*4}`);
           const responseHeadSportsJSON = await responseHead.data;
 
           if(responseSideSportsJSON && responseHeadSportsJSON) {
@@ -131,16 +137,16 @@ const NewsState = props => {
             setLoading(false)
           }
         };
-        searchSportsArticles(count);
-    }, [count])
+        searchSportsArticles(sportsCount);
+    }, [sportsCount])
 
     useEffect(() => {
         setLoading(true);
-        const searchTechArticles = async (count) => {
-          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=technology&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*4}`);
+        const searchTechArticles = async (techCount) => {
+          const responseSide = await axios.get(`https://newsapi.org/v2/top-headlines?country=ca&category=technology&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${techCount*8}`);
           const responseSideTechJSON = await responseSide.data;
 
-          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${count*2}`);
+          const responseHead = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=4b39208e6f1d4eb1b50a674762d71892&pageSize=${techCount*4}`);
           const responseHeadTechJSON = await responseHead.data;
 
           if(responseSideTechJSON && responseHeadTechJSON) {
@@ -149,8 +155,8 @@ const NewsState = props => {
             setLoading(false)
           }
         };
-        searchTechArticles(count);
-    }, [count])
+        searchTechArticles(techCount);
+    }, [techCount])
 
 
     return (
@@ -171,8 +177,20 @@ const NewsState = props => {
             headlineTechArticles: headlineTechArticles,
             sideTechArticles: sideTechArticles,
             loading: loading,
-            count: count,
-            setCount: setCount
+            homeCount: homeCount,
+            setHomeCount: setHomeCount,
+            businessCount: businessCount,
+            setBusinessCount: setBusinessCount,
+            healthCount: healthCount,
+            setHealthCount: setHealthCount,
+            mediaCount: mediaCount,
+            setMediaCount, setMediaCount,
+            scienceCount: scienceCount,
+            setScienceCount: setScienceCount,
+            sportsCount: sportsCount,
+            setSportsCount: setSportsCount,
+            techCount: techCount,
+            setTechCount: setTechCount,
         }}>
             {props.children}
         </NewsContext.Provider>
