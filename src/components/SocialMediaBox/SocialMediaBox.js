@@ -1,5 +1,5 @@
 import React from 'react'
-import './SocialMediaBox.css'
+import './SocialMediaBox.scss'
 
 const SocialMediaBox = () => {
     return (

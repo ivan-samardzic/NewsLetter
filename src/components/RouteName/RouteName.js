@@ -1,5 +1,5 @@
 import React from 'react'
-import './RouteName.css'
+import './RouteName.scss'
 import { Link } from 'react-router-dom'
 
 const RouteName = ({name}) => {

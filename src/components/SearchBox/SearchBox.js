@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import './SearchBox.css'
+import './SearchBox.scss'
 import axios from 'axios'
 
 const SearchBox = ({history}) => {

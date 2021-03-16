@@ -1,0 +1,20 @@
+.route-name-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	width: 1220px;
+	margin: 20px auto -30px auto;
+	.route-name-item {
+		min-width: 90px;
+		height: 50px;
+		background-color: #eee;
+		margin: 10px;
+		padding: 10px 15px;
+		text-transform: uppercase;
+		font-size: 24px;
+		font-weight: 200;
+		color: rgba(40, 40, 200);
+		border-bottom: 3px solid rgba(40, 40, 200);
+	}
+}

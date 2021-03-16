@@ -1,0 +1,21 @@
+.form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: relative;
+	input {
+		min-width: 240px;
+		margin: auto;
+		transition: all 0.1s ease-in-out;
+		&:hover {
+			border: 1px solid rgb(40,40,200);
+		}
+	}
+	i {
+		color: #888;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: rgb(40, 40, 200);
+		}
+	}
+}
