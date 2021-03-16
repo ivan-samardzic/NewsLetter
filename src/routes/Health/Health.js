@@ -18,7 +18,7 @@ const Health = (props) => {
                 <div className='container-fluid'>
                     <Header size='36px' />
                     <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
-                    <RouteName name='Health' />
+                    <RouteName name='health' />
                     {context.loading ? <Spinner /> : 
                     <ArticlesBox headlineArticles={context.headlineHealthArticles} sideArticles={context.sideHealthArticles} />}
                     <Button count={context.healthCount} setCount={context.setHealthCount} />
