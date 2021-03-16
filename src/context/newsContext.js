@@ -16,8 +16,20 @@ const NewsContext = createContext({
     headlineTechArticles: {},
     sideTechArticles: {},
     loading: true,
-    count: 1,
-    setCount: count => {},
+    homeCount: 1,
+    setHomeCount: homeCount => {},
+    businessCount: 1,
+    setBusinessCount: businessCount => {},
+    healthCount: 1,
+    setHealthCount: healthCount => {},
+    mediaCount: 1,
+    setMediaCount: mediaCount => {},
+    scienceCount: 1,
+    setScienceCount: scienceCount => {},
+    sportsCount: 1,
+    setSportsCount: sportsCount => {},
+    techCount: 1,
+    setTechCount: techCount => {},
 });
 
 export default NewsContext;
