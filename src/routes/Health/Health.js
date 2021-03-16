@@ -14,15 +14,17 @@ const Health = (props) => {
 
     return (
         <NewsContext.Consumer>
-            <div className='container-fluid'>
-                <Header size='36px' />
-                <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
-                <RouteName name='Health' />
-                {context.loading ? <Spinner /> : 
-                <ArticlesBox headlineArticles={context.headlineHealthArticles} sideArticles={context.sideHealthArticles} />}
-                <Button count={context.count} setCount={context.setCount} />
-                <Footer size='48px' />
-            </div>
+            {context => (
+                <div className='container-fluid'>
+                    <Header size='36px' />
+                    <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
+                    <RouteName name='Health' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineHealthArticles} sideArticles={context.sideHealthArticles} />}
+                    <Button count={context.healthCount} setCount={context.setHealthCount} />
+                    <Footer size='48px' />
+                </div>
+            )}
         </NewsContext.Consumer>
     )
 }

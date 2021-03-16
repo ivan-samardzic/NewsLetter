@@ -20,7 +20,7 @@ const Media = (props) => {
                 <RouteName name='Media' />
                 {context.loading ? <Spinner /> : 
                 <ArticlesBox headlineArticles={context.headlineMediaArticles} sideArticles={context.sideMediaArticles} />}
-                <Button count={context.count} setCount={context.setCount} />
+                <Button count={context.mediaCount} setCount={context.setMediaCount} />
                 <Footer size='48px' />
             </div>
         )}

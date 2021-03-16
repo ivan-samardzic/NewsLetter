@@ -20,7 +20,7 @@ const Tech = (props) => {
                     <RouteName name='Tech' />
                     {context.loading ? <Spinner /> : 
                     <ArticlesBox headlineArticles={context.headlineTechArticles} sideArticles={context.sideTechArticles} />}
-                    <Button count={context.count} setCount={context.setCount} />
+                    <Button count={context.techCount} setCount={context.setTechCount} />
                     <Footer size='48px' />
                 </div>
             )}

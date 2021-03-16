@@ -15,15 +15,17 @@ const Business = (props) => {
 
     return (
         <NewsContext.Consumer>
-            <div className='container-fluid'>
-                <Header size='36px' />
-                <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
-                <RouteName name='Business' />
-                {context.loading ? <Spinner /> : 
-                <ArticlesBox headlineArticles={context.headlineBusinessArticles} sideArticles={context.sideBusinessArticles} />}
-                <Button count={context.count} setCount={context.setCount} />
-                <Footer size='48px' />
-            </div>
+            {context => (
+                <div className='container-fluid'>
+                    <Header size='36px' />
+                    <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
+                    <RouteName name='Business' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineBusinessArticles} sideArticles={context.sideBusinessArticles} />}
+                    <Button count={context.businessCount} setCount={context.setBusinessCount} />
+                    <Footer size='48px' />
+                </div>
+            )}
         </NewsContext.Consumer>
     )
 }

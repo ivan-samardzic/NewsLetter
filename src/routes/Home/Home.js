@@ -16,10 +16,42 @@ const Home = (props) => {
                 <div className='container-fluid'>
                     <Header size='36px' />
                     <Advert image='https://static.jutarnji.hr/images/live-multimedia/binary/2018/9/28/17/a1.png' />
+
                     <RouteName name='Home' />
                     {context.loading ? <Spinner /> : 
                     <ArticlesBox headlineArticles={context.headlineHomeArticles} sideArticles={context.sideHomeArticles} />}
-                    <Button count={context.count} setCount={context.setCount} />
+                    <Button count={context.homeCount} setCount={context.setHomeCount} />
+
+                    <RouteName name='Business' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineBusinessArticles} sideArticles={context.sideBusinessArticles} />}
+                    <Button count={context.businessCount} setCount={context.setBusinessCount} />
+
+                    <RouteName name='Tech' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineTechArticles} sideArticles={context.sideTechArticles} />}
+                    <Button count={context.techCount} setCount={context.setTechCount} />
+
+                    <RouteName name='Sports' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineSportsArticles} sideArticles={context.sideSportsArticles} />}
+                    <Button count={context.sportsCount} setCount={context.setSportsCount} />
+
+                    <RouteName name='Science' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineScienceArticles} sideArticles={context.sideScienceArticles} />}
+                    <Button count={context.scienceCount} setCount={context.setScienceCount} />
+
+                    <RouteName name='Media' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineMediaArticles} sideArticles={context.sideMediaArticles} />}
+                    <Button count={context.mediaCount} setCount={context.setMediaCount} />
+
+                    <RouteName name='Health' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineHealthArticles} sideArticles={context.sideHealthArticles} />}
+                    <Button count={context.healthCount} setCount={context.setHealthCount} />
+
                     <Footer size='48px' />
                 </div>
             )}
