@@ -17,6 +17,7 @@ const NewsContext = createContext({
     sideTechArticles: {},
     loading: true,
     count: 1,
+    setCount: count => {},
 });
 
 export default NewsContext;
