@@ -6,4 +6,143 @@
 
 .container-fluid {
   min-height: 100vh;
+  position: relative;
+  margin: 0px;
+  padding: 0px 10px;
+}
+
+
+.advert {
+  width: 1200px;
+  margin: auto;
+}
+.sidebar {
+  display: none;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+@media screen and(max-width: 1300px) {
+  .sidebar {
+    position: absolute;
+    top: 4%;
+    right: 0;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+  }
+  .advert {
+    width: 1000px;
+    margin: auto;
+  }
+}
+
+@media screen and(max-width: 1100px) {
+  .sidebar {
+    top: 1.75%;
+  }
+  .advert {
+    width: 800px;
+    margin: auto;
+  }
+}
+
+@media screen and(max-width: 1000px) {
+  .sidebar {
+    top: 2%;
+  }
+  .advert {
+    width: 800px;
+    margin: auto;
+  }
+}
+
+
+@media screen and(max-width: 750px) {
+  .advert {
+    width: 500px;
+    margin: auto;
+  }
+  .sidebar {
+    top: 3%;
+  }
+}
+
+@media screen and(max-width: 600px) {
+  .sidebar {
+    top: 3%;
+    right: 0%;
+    width: 550px;
+    margin: auto;
+  }
+  .advert {
+    width: 500px;
+    margin: auto;
+  }
+}
+
+@media screen and(max-width: 570px) {
+  .advert {
+    width: 400px;
+    margin: auto;
+  }
+  .sidebar {
+    padding: 0px 20px;
+    top: 3%;
+    width: 520px;
+    margin: auto;
+  }
+}
+
+@media screen and(max-width: 520px) {
+  .advert {
+    width: 400px;
+    margin: auto;
+  }
+  .sidebar {
+    top: 3%;
+    width: 450px;
+    margin: auto;
+  }
+}
+
+@media screen and(max-width: 450px) {
+	.sidebar {
+    top: 3%;
+    right: 3%;
+    width: 400px;
+    margin: 5px 2px;
+  }
+  .advert {
+    transform: scale(0.9,0.95);
+    margin: auto;
+  }
+}
+
+@media screen and(max-width: 420px) {
+	.sidebar {
+    width: 400px;
+    top: 3%;
+    margin: auto;
+  }
+  .advert {
+    transform: scale(0.9,0.95);
+    margin: 5px;
+  }
+}
+
+@media screen and(max-width: 415px) {
+	.sidebar {
+    width: 400px;
+    top: 2.5%;
+    margin: auto;
+  }
+  .advert {
+    transform: scale(0.85,0.85);
+    margin: auto;
+    margin-left: -10px;
+  }
 }
