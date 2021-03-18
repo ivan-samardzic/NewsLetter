@@ -11,8 +11,9 @@ the data from News API, this API allows us to fetch the data 100 times per one d
 React Router Dom was also installed with npm and it is used to Switch between different Routes depending on the Link that was clicked. Then, 
 every Route reuses the same components, Header and all child components, ArticlesBox and Article component where the data will be passed 
 using props and then rendered and at the end Footer and its child components. The Spinner component is introduced to show the users the data 
-buffering (the screen cant be without content while fetching data from api). Later, the app will be optimized even for 416px (mobile) width 
-screen.
+buffering (the screen cant be without content while fetching data from api). 
+
+Later, the app will be optimized even for 1300px, 1100px, 750px and 410px (mobile) width screen.
 
 App will use:
 1. React (React Router, React Hooks, React JSX, React Link, React Props, React Stats and more)
@@ -27,7 +28,7 @@ Requirements List:
 4. The app should have a button that must be clickable and by clicking it number of rendered articles from each category should be
 doubled
 5. By clicking on each article, app must lead the user to the article url provided by News API
-
+6. By clicking on the button located in the sidebar of the page of each category, it is possible to open or close the sidebar
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
