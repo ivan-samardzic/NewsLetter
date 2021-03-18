@@ -22,6 +22,26 @@ const Home = (props) => {
                     <ArticlesBox headlineArticles={context.headlineHomeArticles} sideArticles={context.sideHomeArticles} />}
                     <Button count={context.homeCount} setCount={context.setHomeCount} />
 
+                    <RouteName name='business' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineHomeArticles} sideArticles={context.sideHomeArticles} />}
+                    <Button count={context.homeCount} setCount={context.setHomeCount} />
+
+                    <RouteName name='media' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineHomeArticles} sideArticles={context.sideHomeArticles} />}
+                    <Button count={context.homeCount} setCount={context.setHomeCount} />
+
+                    <RouteName name='sports' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineHomeArticles} sideArticles={context.sideHomeArticles} />}
+                    <Button count={context.homeCount} setCount={context.setHomeCount} />
+
+                    <RouteName name='tech' />
+                    {context.loading ? <Spinner /> : 
+                    <ArticlesBox headlineArticles={context.headlineHomeArticles} sideArticles={context.sideHomeArticles} />}
+                    <Button count={context.homeCount} setCount={context.setHomeCount} />
+
                     <Footer size='48px' />
                 </div>
             )}
