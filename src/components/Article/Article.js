@@ -22,7 +22,7 @@ const Article = ({article, type}) => {
                     <img className="side-poster" src={article.urlToImage} alt="side-poster" />
                     <div className="side-details">
                         <div className='side-title'>{article.title}</div>
-                        <button className='btn'><a href={article.url}><i className="fas fa-arrow-right"></i></a></button>
+                        <button className='btn'><a href={article.url}>More</a></button>
                     </div>
                 </div>
         )
