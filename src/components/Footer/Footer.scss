@@ -45,7 +45,7 @@ footer {
     footer {
         display: flex;
         flex-direction: column;
-        padding: 20px;
+        padding: 20px auto auto auto;
         .footer-logo {
             margin-left: 160px;
         }
