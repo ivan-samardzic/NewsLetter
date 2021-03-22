@@ -176,7 +176,7 @@ const NewsState = props => {
             healthCount: healthCount,
             setHealthCount: setHealthCount,
             mediaCount: mediaCount,
-            setMediaCount, setMediaCount,
+            setMediaCount: setMediaCount,
             scienceCount: scienceCount,
             setScienceCount: setScienceCount,
             sportsCount: sportsCount,
